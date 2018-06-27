@@ -33,10 +33,13 @@ random_Content = function (_type, _poor, _time, _split_Sign, _ele_Fix_Callback)
             }
             break;
     }
-    return function ()
+    return function (rs_Time)
     {
         var result = [];
         var count_Time = init_Time;
+        if(typeof rs_Time != "undefined"){
+            count_Time = rs_Time;
+        }
         while(count_Time--){
             result.push(_ele_Fix_Callback(random_Maker()));
         }
