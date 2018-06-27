@@ -2,6 +2,15 @@ random_Content = function (_type, _poor, _time, _split_Sign, _ele_Fix_Callback)
 {
     var random_Maker = function (){}
     var init_Time = _time;
+    if(typeof init_Time == "string"){
+        var temp_1 = init_Time.split(":");
+        var num_1 = Number(temp_1[0]);
+        var num_2 = Number(temp_1[1]);
+        init_Time = function ()
+        {
+            return num_1 + Math.round(Math.random() * (num_2 - num_1));
+        }
+    }
     if(!_ele_Fix_Callback){
         _ele_Fix_Callback = function (v){return v;}
     }
@@ -37,8 +46,11 @@ random_Content = function (_type, _poor, _time, _split_Sign, _ele_Fix_Callback)
     {
         var result = [];
         var count_Time = init_Time;
+        if(typeof count_Time !="number"){
+            count_Time = init_Time();
+        }
         if(typeof rs_Time != "undefined"){
-            count_Time = rs_Time;
+            count_Time = Math.round(rs_Time);
         }
         while(count_Time--){
             result.push(_ele_Fix_Callback(random_Maker()));
