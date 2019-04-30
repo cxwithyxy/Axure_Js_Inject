@@ -252,7 +252,7 @@ $axure.internal(function($ax) {
         );
         
         //*************************************
-        
+        console.log("lodadadad");
         // If more than one group returned, the object is not valid
         if(i != 1) retval = false;
         return retval || retvalString;

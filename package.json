@@ -1,0 +1,15 @@
+{
+  "name": "Axure_Js_Inject",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/cxwithyxy/Axure_Js_Inject.git",
+  "author": "cx2889 <cxwithyxy@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "uglifyjs": "^2.4.11"
+  },
+  "scripts": {
+    "mini_it": "uglifyjs",
+    "mini_expr": "uglifyjs ./dev/expr.js --output ./expr.min.js"
+  }
+}
