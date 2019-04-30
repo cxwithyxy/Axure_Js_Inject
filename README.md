@@ -42,5 +42,16 @@
 
 - 把js代码粘贴到code_Box中
 
+#### 使用case_Expose
+
+case_Expose 用于把axure中的事件处理的case提取接口给外部js调用
+
+- 从Axure_Js_Inject元件库中拖拽case_Expose到你的页面上
+
+- case_Expose中设置文本为你想要的接口名称(如: 移动那个东西)
+
+- 设置case_Expose的交互--鼠标单击时--case为: 移动另一个元件
+
+- 在任意可以执行js代码的地方(如: code_Box)调用你想要的接口名称(如: 移动那个东西();)
 
 
