@@ -13,7 +13,7 @@
   "scripts": {
     "tsc": "tsc",
     "mini_it": "uglifyjs",
-    "mini_expr": "uglifyjs ./dev/expr.js --output ./expr.min.js",
-    "encodeURI": "node ./cli/encodeURI.js ./expr.min.js"
+    "mini_expr": "uglifyjs ./dev/expr.js --output ./expr.min.js && tsc && node ./cli/encodeURI.js ./expr.min.js",
+    "encodeURI": "tsc && node ./cli/encodeURI.js ./expr.min.js"
   }
 }
