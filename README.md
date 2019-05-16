@@ -11,7 +11,7 @@
 
 #### 更好的说明
 
-[Axure_js_inject 的使用说明(尚未修复页面的兼容问题)](https://cxwithyxy.gitee.io/axure_js_inject/#g=1&p=axure_js_inject____&c=1)
+[Axure_js_inject 的使用说明](https://cxwithyxy.gitee.io/axure_js_inject/axure_js_inject____.html)
 
 #### 开始
 
