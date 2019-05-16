@@ -1,4 +1,4 @@
-# Axure_Js_Inject v1.0
+# Axure_Js_Inject v2.0
 可以在产品原型（RP）中加入你想要的js代码，这些js代码会用浏览器浏览产品原型的时候执行
 
 ---
@@ -6,13 +6,12 @@
 
 ## 支持
 
-- 目前支持 Axure rp 8.1.0.3372
-
-- 其他版本有待测试
+- Axure rp 9.0 
+- Chrome 浏览器 73版 及以上
 
 #### 更好的说明
 
-[Axure_js_inject 的使用说明](https://cxwithyxy.gitee.io/axure_js_inject/#g=1&p=axure_js_inject____&c=1)
+[Axure_js_inject 的使用说明(尚未修复页面的兼容问题)](https://cxwithyxy.gitee.io/axure_js_inject/#g=1&p=axure_js_inject____&c=1)
 
 #### 开始
 
@@ -42,5 +41,16 @@
 
 - 把js代码粘贴到code_Box中
 
+#### 使用case_Expose
+
+case_Expose 用于把axure中的事件处理的case提取接口给外部js调用
+
+- 从Axure_Js_Inject元件库中拖拽case_Expose到你的页面上
+
+- case_Expose中设置文本为你想要的接口名称(如: 移动那个东西)
+
+- 设置case_Expose的交互--鼠标单击时--case为: 移动另一个元件
+
+- 在任意可以执行js代码的地方(如: code_Box)调用你想要的接口名称(如: 移动那个东西();)
 
 
