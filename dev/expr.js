@@ -1,4 +1,3 @@
-//***** expr.js *****//
 // ******* Expr MANAGER ******** //
 $axure.internal(function($ax) {
     var _expr = $ax.expr = {};
@@ -242,8 +241,8 @@ $axure.internal(function($ax) {
                 "})();"
             )(inObj);
         };
-
-        retvalString = 
+        
+        retvalString =
             retvalString.replace(
                 /\{\{(?!\{)(.*?)\}\}(?=\}*)/g,
                 function(match) {
@@ -251,9 +250,8 @@ $axure.internal(function($ax) {
                     return runtime_In_Obj(eventInfo, match);
                 }
         );
-
+        
         //*************************************
-
         // If more than one group returned, the object is not valid
         if(i != 1) retval = false;
         return retval || retvalString;
@@ -398,6 +396,10 @@ $axure.internal(function($ax) {
         return $ax('#' + ids[0]).selected();
     };
 
+    _exprFunctions.GetDisabledState = function (ids) {
+        return !$ax('#' + ids[0]).enabled();
+    };
+
     _exprFunctions.GetSelectedOption = function (ids) {
         var inputs = $jobj($ax.INPUT(ids[0]));
         return inputs.length ? inputs[0].value : '';
@@ -528,11 +530,17 @@ $axure.internal(function($ax) {
         }
 
         var axObj = $ax('#' + elementId);
+        var boundingRect = axObj.viewportBoundingRect();
         rects.lastRect = new $ax.drag.Rectangle(
-                axObj.left(),
-                axObj.top(),
-                axObj.width(),
-                axObj.height());
+            boundingRect.left,
+            boundingRect.top,
+            boundingRect.width,
+            boundingRect.height);
+        //rects.lastRect = new $ax.drag.Rectangle(
+        //        axObj.left(),
+        //        axObj.top(),
+        //        axObj.width(),
+        //        axObj.height());
 
         rects.currentRect = rects.lastRect;
         return rects;
@@ -542,7 +550,16 @@ $axure.internal(function($ax) {
         return $ax.getWidgetInfo(elementId[0]);
     };
 
-    _exprFunctions.GetAdaptiveView = function() {
+    _exprFunctions.GetAdaptiveView = function (eventInfo) {
+        if (eventInfo && eventInfo.srcElement) {
+            var id = eventInfo.srcElement;
+            var diagramObject = $ax.getObjectFromElementId(id);
+            if (diagramObject.owner.type == 'Axure:Master') {
+                var viewIdChain = $ax.style.getViewIdChain($ax.adaptive.currentViewId || '', id, diagramObject);
+                if (viewIdChain.length > 0) return viewIdChain[viewIdChain.length - 1];
+                else return '19e82109f102476f933582835c373474';
+            }
+        }
         return $ax.adaptive.currentViewId || '';
     };
 

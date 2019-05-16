@@ -10,6 +10,10 @@
 
 - 其他版本有待测试
 
+#### 更好的说明
+
+[Axure_js_inject 的使用说明](https://cxwithyxy.gitee.io/axure_js_inject/#g=1&p=axure_js_inject____&c=1)
+
 #### 开始
 
 - 在元件库中导入 Axure_Js_Inject.rplib
