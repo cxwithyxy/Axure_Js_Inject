@@ -227,6 +227,31 @@ $axure.internal(function($ax) {
             }
             return ((result instanceof Object) && (result.label || result.text)) || result;
         });
+        
+        //*************************************
+        // runtime_In_Obj = function (inObj, funS)
+        // {
+        //     return eval(
+        //         "(function (){"+
+        //             "return function (a){" +
+        //                 "with(a){"+
+        //                     "return " + funS + ";" +
+        //                 "}"+
+        //             "}"+
+        //         "})();"
+        //     )(inObj);
+        // };
+         
+        // retvalString =
+        //     retvalString.replace(
+        //         /\{\{(?!\{)(.*?)\}\}(?=\}*)/g,
+        //         function(match) {
+        //             match = match.substring(2, match.length-2);
+        //             return runtime_In_Obj(eventInfo, match);
+        //         }
+        // );
+         
+        //*************************************
         // If more than one group returned, the object is not valid
         if(i != 1) retval = false;
         return retval || retvalString;
