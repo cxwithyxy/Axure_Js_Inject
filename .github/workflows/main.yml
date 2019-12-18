@@ -1,0 +1,44 @@
+name: built_and_upload_after_released
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build_it:
+
+    runs-on: windows-2019
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: yarn init
+      run:  yarn
+    - name: build it
+      run: yarn pack:axure_script
+    - name: display dir
+      run: dir .\dist
+    - name: move useless file
+      run: move .\dist\DefaultSettings .\dist\..\DefaultSettings
+    - name: send for release_it job
+      uses: actions/upload-artifact@v1
+      with:
+          name: homework
+          path: .\dist\
+  
+  release_it:
+    needs: [build_it]
+    runs-on: ubuntu-latest
+  
+    steps:
+    - name: download from build_it job
+      uses: actions/download-artifact@v1
+      with:
+        name: homework
+    - name: display dir agian
+      run: ls homework
+    - name: release it
+      uses: skx/github-action-publish-binaries@master
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+          args: homework/*.zip
