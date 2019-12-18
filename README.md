@@ -1,25 +1,32 @@
-# Axure_Js_Inject v2.0
+# Axure_Js_Inject v3.0
 可以在产品原型（RP）中加入你想要的js代码，这些js代码会用浏览器浏览产品原型的时候执行
 
 ---
 
 
-## 支持
+## 软件要求
 
 - Axure rp 9.0 
-- Chrome 浏览器 73版 及以上
+- Chrome 浏览器 73版 及以上的浏览器
+
+## 可运行的地方
+
+- [通过蓝湖axure插件上传到蓝湖平台](https://lanhuapp.com/)
+- axure 自带的生成 html 文件
+
+## 不可运行的地方
+
+* axure cloud
+
+------
+
+## 用法
 
 #### 更好的说明
 
 [Axure_js_inject 的使用说明](https://cxwithyxy.gitee.io/axure_js_inject/axure_js_inject____.html)
 
-#### 开始
-
-- 在元件库中导入 Axure_Js_Inject.rplib
-
 #### 使用{{}}占位符执行代码
-
-- 从Axure_Js_Inject元件库中拖拽{{}}到你的页面上
 
 - 在可以使用[[]]的地方，便可以使用{{}}
 
