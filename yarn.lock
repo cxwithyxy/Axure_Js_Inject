@@ -9,7 +9,3 @@
 typescript@^3.4.5:
   version "3.4.5"
   resolved "https://registry.npm.taobao.org/typescript/download/typescript-3.4.5.tgz#2d2618d10bb566572b8d7aad5180d84257d70a99"
-
-uglifyjs@^2.4.11:
-  version "2.4.11"
-  resolved "https://registry.npm.taobao.org/uglifyjs/download/uglifyjs-2.4.11.tgz#3440d64e045759589524418eb641c68bb90d113e"
