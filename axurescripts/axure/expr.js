@@ -229,27 +229,27 @@ $axure.internal(function($ax) {
         });
         
         //*************************************
-        // runtime_In_Obj = function (inObj, funS)
-        // {
-        //     return eval(
-        //         "(function (){"+
-        //             "return function (a){" +
-        //                 "with(a){"+
-        //                     "return " + funS + ";" +
-        //                 "}"+
-        //             "}"+
-        //         "})();"
-        //     )(inObj);
-        // };
+        runtime_In_Obj = function (inObj, funS)
+        {
+            return eval(
+                "(function (){"+
+                    "return function (a){" +
+                        "with(a){"+
+                            "return " + funS + ";" +
+                        "}"+
+                    "}"+
+                "})();"
+            )(inObj);
+        };
          
-        // retvalString =
-        //     retvalString.replace(
-        //         /\{\{(?!\{)(.*?)\}\}(?=\}*)/g,
-        //         function(match) {
-        //             match = match.substring(2, match.length-2);
-        //             return runtime_In_Obj(eventInfo, match);
-        //         }
-        // );
+        retvalString =
+            retvalString.replace(
+                /\{\{(?!\{)(.*?)\}\}(?=\}*)/g,
+                function(match) {
+                    match = match.substring(2, match.length-2);
+                    return runtime_In_Obj(eventInfo, match);
+                }
+        );
          
         //*************************************
         // If more than one group returned, the object is not valid
