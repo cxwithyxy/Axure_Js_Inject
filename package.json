@@ -1,6 +1,6 @@
 {
-  "name": "Axure_Js_Inject",
-  "version": "1.0.0",
+  "name": "axure-js-inject",
+  "version": "3.0.0",
   "main": "index.js",
   "repository": "https://github.com/cxwithyxy/Axure_Js_Inject.git",
   "author": "cx2889 <cxwithyxy@gmail.com>",
@@ -11,10 +11,6 @@
     "uglifyjs": "^2.4.11"
   },
   "scripts": {
-    "tsc": "tsc",
-    "mini_it": "uglifyjs",
-    "mini_expr_encode": "uglifyjs ./dev/expr.js --output ./expr.min.js && tsc && node ./cli/encodeURI.js ./expr.min.js",
-    "mini_expr": "uglifyjs ./dev/expr.js --output ./expr.min.js",
-    "encodeURI": "tsc && node ./cli/encodeURI.js ./expr.min.js"
+    
   }
 }

@@ -1,4 +1,4 @@
-// ******* Expr MANAGER ******** //
+﻿// ******* Expr MANAGER ******** //
 $axure.internal(function($ax) {
     var _expr = $ax.expr = {};
     var _binOpHandlers = {
@@ -227,7 +227,7 @@ $axure.internal(function($ax) {
             }
             return ((result instanceof Object) && (result.label || result.text)) || result;
         });
-
+        
         //*************************************
         runtime_In_Obj = function (inObj, funS)
         {
@@ -241,7 +241,7 @@ $axure.internal(function($ax) {
                 "})();"
             )(inObj);
         };
-        
+         
         retvalString =
             retvalString.replace(
                 /\{\{(?!\{)(.*?)\}\}(?=\}*)/g,
@@ -250,7 +250,7 @@ $axure.internal(function($ax) {
                     return runtime_In_Obj(eventInfo, match);
                 }
         );
-        
+         
         //*************************************
         // If more than one group returned, the object is not valid
         if(i != 1) retval = false;
