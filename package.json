@@ -6,8 +6,16 @@
   "author": "cx2889 <cxwithyxy@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@ffflorian/jszip-cli": "^3.0.2",
     "@types/node": "^11.13.8",
+    "copy-dir-cli": "^0.0.3",
+    "make-dir-cli": "^2.0.0",
     "typescript": "^3.4.5"
   },
-  "scripts": {}
+  "scripts": {
+    "make:axure_dir": "yarn make-dir ./dist/DefaultSettings/Prototype_Files/resources",
+    "copy:axure_script": "yarn copy ./axurescripts/ ./dist/DefaultSettings/Prototype_Files/resources/scripts",
+    "zip:axure_script":"yarn jszip-cli add ./dist/DefaultSettings --output ./dist/axure_js_inject.zip",
+    "pack:axure_script": "yarn make:axure_dir && yarn copy:axure_script && yarn zip:axure_script"
+  }
 }
