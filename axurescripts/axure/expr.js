@@ -241,16 +241,21 @@ $axure.internal(function($ax) {
                 "})();"
             )(inObj);
         };
-         
+
+        var my_obj = {};
+        my_obj.window = window;
+        my_obj.self = eventInfo.thiswidget;
+        my_obj.ei = eventInfo;
+
         retvalString =
             retvalString.replace(
                 /\{\{(?!\{)(.*?)\}\}(?=\}*)/g,
                 function(match) {
                     match = match.substring(2, match.length-2);
-                    return runtime_In_Obj(eventInfo, match);
+                    return runtime_In_Obj(my_obj, match);
                 }
         );
-         
+        
         //*************************************
         // If more than one group returned, the object is not valid
         if(i != 1) retval = false;
