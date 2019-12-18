@@ -7,10 +7,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^11.13.8",
-    "typescript": "^3.4.5",
-    "uglifyjs": "^2.4.11"
+    "typescript": "^3.4.5"
   },
-  "scripts": {
-    
-  }
+  "scripts": {}
 }
