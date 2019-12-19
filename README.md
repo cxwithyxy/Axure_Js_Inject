@@ -22,7 +22,7 @@
 
 ## 用法（图文版）
 
-[Axure_js_inject 的使用说明](https://cxwithyxy.gitee.io/axure_js_inject/axure_js_inject____.html)
+[Axure_js_inject 的使用说明](https://lanhuapp.com/url/PQKzl)
 
 ## 用法（纯文字版）
 
