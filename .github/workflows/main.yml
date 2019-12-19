@@ -10,7 +10,9 @@ jobs:
     runs-on: windows-2019
     
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
+      with:
+          lfs: true
     - name: yarn init
       run:  yarn
     - name: build it
