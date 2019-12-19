@@ -14,11 +14,9 @@ jobs:
     - name: yarn init
       run:  yarn
     - name: build it
-      run: yarn pack:axure_script
+      run: yarn pack:do
     - name: display dir
       run: dir .\dist
-    - name: move useless file
-      run: move .\dist\DefaultSettings .\dist\..\DefaultSettings
     - name: send for release_it job
       uses: actions/upload-artifact@v1
       with:
