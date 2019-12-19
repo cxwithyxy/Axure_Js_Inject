@@ -20,11 +20,19 @@
 
 ------
 
-## 用法
-
-#### 更好的说明
+## 用法（图文版）
 
 [Axure_js_inject 的使用说明](https://cxwithyxy.gitee.io/axure_js_inject/axure_js_inject____.html)
+
+## 用法（纯文字版）
+
+#### 安装
+
+1. 前往发布页下载 [axure_js_inject.zip](https://github.com/cxwithyxy/Axure_Js_Inject/releases)
+2. 关闭运行中的 axure9
+3. 解压到 axure9 的根目录 （可能是这个路径：D:\Axure\Axure RP 9\）
+4. 启动 axure9
+5. 在元件库中找到 Axure_Js_Inject_V3 ，则证明安装成功了
 
 #### 使用{{}}占位符执行代码
 
