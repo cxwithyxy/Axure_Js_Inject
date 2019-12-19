@@ -1,4 +1,4 @@
-// ******* Expr MANAGER ******** //
+﻿// ******* Expr MANAGER ******** //
 $axure.internal(function($ax) {
     var _expr = $ax.expr = {};
     var _binOpHandlers = {
@@ -227,7 +227,7 @@ $axure.internal(function($ax) {
             }
             return ((result instanceof Object) && (result.label || result.text)) || result;
         });
-
+        
         //*************************************
         runtime_In_Obj = function (inObj, funS)
         {
@@ -241,13 +241,18 @@ $axure.internal(function($ax) {
                 "})();"
             )(inObj);
         };
-        
+
+        var my_obj = {};
+        my_obj.window = window;
+        my_obj.self = eventInfo.thiswidget;
+        my_obj.ei = eventInfo;
+
         retvalString =
             retvalString.replace(
                 /\{\{(?!\{)(.*?)\}\}(?=\}*)/g,
                 function(match) {
                     match = match.substring(2, match.length-2);
-                    return runtime_In_Obj(eventInfo, match);
+                    return runtime_In_Obj(my_obj, match);
                 }
         );
         

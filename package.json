@@ -1,20 +1,25 @@
 {
-  "name": "Axure_Js_Inject",
-  "version": "1.0.0",
+  "name": "axure-js-inject",
+  "version": "3.0.0",
   "main": "index.js",
   "repository": "https://github.com/cxwithyxy/Axure_Js_Inject.git",
   "author": "cx2889 <cxwithyxy@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@ffflorian/jszip-cli": "^3.0.2",
     "@types/node": "^11.13.8",
-    "typescript": "^3.4.5",
-    "uglifyjs": "^2.4.11"
+    "copy-dir-cli": "^0.0.3",
+    "del-cli": "^3.0.0",
+    "make-dir-cli": "^2.0.0",
+    "typescript": "^3.4.5"
   },
   "scripts": {
-    "tsc": "tsc",
-    "mini_it": "uglifyjs",
-    "mini_expr_encode": "uglifyjs ./dev/expr.js --output ./expr.min.js && tsc && node ./cli/encodeURI.js ./expr.min.js",
-    "mini_expr": "uglifyjs ./dev/expr.js --output ./expr.min.js",
-    "encodeURI": "tsc && node ./cli/encodeURI.js ./expr.min.js"
+    "make:axure_script_dir": "yarn make-dir ./dist/DefaultSettings/Prototype_Files/resources",
+    "copy:axure_script": "yarn copy ./axurescripts/ ./dist/DefaultSettings/Prototype_Files/resources/scripts",
+    "zip:axure_script": "yarn jszip-cli add ./dist/DefaultSettings --output ./dist/axure_js_inject.zip",
+    "copy:axure_rplib": "yarn copy ./axurerplib/ ./dist/DefaultSettings/Libraries",
+    "pack:zip": "yarn make:axure_script_dir && yarn copy:axure_script && yarn copy:axure_rplib && yarn zip:axure_script",
+    "pack:clean": "yarn del-cli ./dist/DefaultSettings",
+    "pack:do": "yarn pack:zip && yarn pack:clean"
   }
 }
