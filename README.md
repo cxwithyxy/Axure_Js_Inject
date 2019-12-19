@@ -28,7 +28,7 @@
 
 #### 安装
 
-1. 前往发布页下载 [axure_js_inject.zip](https://github.com/cxwithyxy/Axure_Js_Inject/releases)
+1. 前往发布页下载 axure_js_inject.zip : [下载方式1(github)](https://github.com/cxwithyxy/Axure_Js_Inject/releases)  |  [下载方式2(gitee)](https://gitee.com/cxwithyxy/Axure_Js_Inject/releases)
 2. 关闭运行中的 axure9
 3. 解压到 axure9 的根目录 （可能是这个路径：D:\Axure\Axure RP 9\）
 4. 启动 axure9
